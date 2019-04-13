@@ -8,6 +8,7 @@
     state: present
 
 - name: Create mediawiki user
+  mysql_user:
     login_host: localhost
     login_user: root
     login_password: "{{ VAR_MARIADB_PASSWORD }}"
