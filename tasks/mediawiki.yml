@@ -25,7 +25,7 @@
       # After initial setup, download LocalSettings.php to the same directory as
       # this yaml and uncomment the following line and use compose to restart
       # the mediawiki service
-      #- "{{ VAR_MEDIAWIKI_DIR }}"/LocalSettings.php:/var/www/html/LocalSettings.php
+      - "{{ VAR_MEDIAWIKI_DIR }}"/LocalSettings.php:/var/www/html/LocalSettings.php
     links:
       - mariadb:mysql
     restart_policy: unless-stopped
