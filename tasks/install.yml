@@ -1,0 +1,5 @@
+---
+- name: Install python3-PyMySQL for ansible dep.
+  dnf:
+    name: python3-PyMySQL
+    state: latest

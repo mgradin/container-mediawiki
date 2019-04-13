@@ -1,0 +1,10 @@
+---
+# tasks file for container-mediawiki
+- import_tasks: install.yml
+  become: true
+
+- import_tasks: database.yml
+  become: true
+
+- import_tasks: mediawiki.yml
+  become: true

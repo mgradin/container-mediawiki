@@ -1,0 +1,26 @@
+---
+- name: Create MediaWiki directory
+  file: 
+    path: "{{ VAR_MEDIAWIKI_IMAGES_DIR }}"
+    recurse: yes
+    state: directory
+
+- name: Start MediaWiki container
+  docker_container:
+    name: mediawiki
+    image: mediawiki:latest
+    pull: yes
+    state: started
+    env:
+       MYSQL_DATABASE: "{{ VAR_MEDIAWIKI_DB }}"
+       MYSQL_USER: "{{ VAR_MEDIAWIKI_USER }}"
+       MYSQL_PASSWORD: "{{ VAR_MEDIAWIKI_PASSWORD }}"
+    volumes:
+      - "{{ VAR_MEDIAWIKI_IMAGES_DIR }}:/var/www/html/images"
+      # After initial setup, download LocalSettings.php to the same directory as
+      # this yaml and uncomment the following line and use compose to restart
+      # the mediawiki service
+      #- "{{ VAR_MEDIAWIKI_DIR }}"/LocalSettings.php:/var/www/html/LocalSettings.php
+    links:
+      - mariadb:mysql
+    restart_policy: unless-stopped
