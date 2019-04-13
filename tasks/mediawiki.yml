@@ -13,8 +13,8 @@
     state: started
     env:
        MYSQL_DATABASE: "{{ VAR_MEDIAWIKI_DB }}"
-       MYSQL_USER: "{{ VAR_MEDIAWIKI_USER }}"
-       MYSQL_PASSWORD: "{{ VAR_MEDIAWIKI_PASSWORD }}"
+       MYSQL_USER: "{{ VAR_MEDIAWIKI_DB_USER }}"
+       MYSQL_PASSWORD: "{{ VAR_MEDIAWIKI_DB_PASSWORD }}"
     volumes:
       - "{{ VAR_MEDIAWIKI_IMAGES_DIR }}:/var/www/html/images"
       # After initial setup, download LocalSettings.php to the same directory as

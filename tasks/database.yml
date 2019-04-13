@@ -12,7 +12,7 @@
     login_host: localhost
     login_user: root
     login_password: "{{ VAR_MARIADB_PASSWORD }}"
-    name: "{{ VAR_MEDIAWIKI_USER }}"
-    password: "{{ VAR_MEDIAWIKI_PASSWORD }}"
+    name: "{{ VAR_MEDIAWIKI_DB_USER }}"
+    password: "{{ VAR_MEDIAWIKI_DB_PASSWORD }}"
     priv: "{{ VAR_MEDIAWIKI_DB }}.*:ALL,GRANT"
     state: present
