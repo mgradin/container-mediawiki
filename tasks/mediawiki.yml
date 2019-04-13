@@ -4,6 +4,8 @@
     path: "{{ VAR_MEDIAWIKI_IMAGES_DIR }}"
     recurse: yes
     state: directory
+    owner: 33
+    group: 33
 
 - name: Start MediaWiki container
   docker_container:
