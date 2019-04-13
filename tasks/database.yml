@@ -14,5 +14,6 @@
     login_password: "{{ VAR_MARIADB_PASSWORD }}"
     name: "{{ VAR_MEDIAWIKI_DB_USER }}"
     password: "{{ VAR_MEDIAWIKI_DB_PASSWORD }}"
+    host: '%'
     priv: "{{ VAR_MEDIAWIKI_DB }}.*:ALL,GRANT"
     state: present
