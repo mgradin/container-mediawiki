@@ -15,6 +15,11 @@
        MYSQL_DATABASE: "{{ VAR_MEDIAWIKI_DB }}"
        MYSQL_USER: "{{ VAR_MEDIAWIKI_DB_USER }}"
        MYSQL_PASSWORD: "{{ VAR_MEDIAWIKI_DB_PASSWORD }}"
+    labels:
+      traefik.backend=mediawiki
+      "traefik.frontend.rule=Host:{{ VAR_MEDIAWIKI_URL }}"
+      traefik.port=80
+      traefik.enable=true
     volumes:
       - "{{ VAR_MEDIAWIKI_IMAGES_DIR }}:/var/www/html/images"
       # After initial setup, download LocalSettings.php to the same directory as

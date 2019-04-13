@@ -5,3 +5,4 @@ VAR_MEDIAWIKI_DB_USER: mediawiki
 VAR_MEDIAWIKI_DB_PASSWORD: mediawiki
 VAR_MEDIAWIKI_DIR: /opt/mediawiki
 VAR_MEDIAWIKI_IMAGES_DIR: /opt/mediawiki/images
+VAR_MEDIAWIKI_URL: mediawiki.examples.com
